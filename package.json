@@ -1,6 +1,6 @@
 {
   "name": "dsh-token-frugal",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Frugal tool layer for DeepSeek Harness: precise file reading, a self-serve tool catalog, and slimmed oversized tool results, so long sessions stop re-billing whole files and whole pages.",
   "type": "module",
   "license": "MIT",
