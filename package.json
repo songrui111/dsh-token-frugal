@@ -17,11 +17,11 @@
   "engines": { "dsh": ">=0.2.0" },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/songrui111/dsh-token-diet.git"
+    "url": "git+https://github.com/songrui111/dsh-token-frugal.git"
   },
-  "homepage": "https://github.com/songrui111/dsh-token-diet#readme",
+  "homepage": "https://github.com/songrui111/dsh-token-frugal#readme",
   "bugs": {
-    "url": "https://github.com/songrui111/dsh-token-diet/issues"
+    "url": "https://github.com/songrui111/dsh-token-frugal/issues"
   },
   "publishConfig": {
     "access": "public"
