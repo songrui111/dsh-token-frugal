@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Token Diet">
+  <rect x="4" y="4" width="56" height="56" rx="14" fill="#0f766e"/>
+  <path d="M20 22h24M20 32h16M20 42h10" stroke="#ccfbf1" stroke-width="4" stroke-linecap="round"/>
+  <path d="M43 38l7 7-7 7" stroke="#5eead4" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="47" cy="21" r="5" fill="#5eead4"/>
+</svg>

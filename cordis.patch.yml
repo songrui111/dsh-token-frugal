@@ -1,0 +1,14 @@
+# dsh-token-diet — one installable row.
+#
+# The row is referenced by PACKAGE NAME, matching every other bundle in this
+# profile. A relative `./index.js` here resolved inconsistently once the bundle
+# was composed from the profile's node_modules: the insert was silently dropped
+# after the host restarted, so the plugin disappeared.
+#
+# `package.json` exports the entry at "." , so the bare name loads index.js.
+#
+# The row id is stable: a user's own cordis.patch.yml can override `config`.
+- insert:
+    - id: token-diet
+      name: dsh-token-diet
+      config: {}
