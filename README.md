@@ -24,7 +24,7 @@ Same question, different read strategy:
 
 | File | Lines | Whole read | `symbol` mode | Saved |
 |---|---:|---:|---:|---:|
-| `dsh-token-diet/index.js` | 464 | 4,661 tok | 188 tok | **96.0%** |
+| `index.js` | 464 | 4,661 tok | 188 tok | **96.0%** |
 | `publisher-radar/client/client.js` | 710 | 9,389 tok | 274 tok | **97.1%** |
 | `dsh-agent-bench/lib/index.js` | 875 | 8,999 tok | 513 tok | **94.3%** |
 | **total** | | **23,049** | **975** | **95.8%** |
