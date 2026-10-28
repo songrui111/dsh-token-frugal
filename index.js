@@ -1,5 +1,5 @@
 /**
- * dsh-token-diet — frugal tool layer for DeepSeek Harness.
+ * dsh-token-frugal — frugal tool layer for DeepSeek Harness.
  *
  * Two tools, both deferred-loaded so their schemas cost almost nothing per turn:
  *
@@ -89,7 +89,7 @@ function cpLength(text) {
  *
  * Live probing in the desktop Host established two facts that drive this:
  *
- *   1. `fs.resolve()` almost never throws — it happily returns a target for a
+ *   1. `fs.resolve()` almost never throws: it happily returns a target for a
  *      path that does not exist. The real failure surfaces on `readText()`.
  *      So "did resolve() succeed?" is useless as a test; we must try a read.
  *   2. `process.cwd()` (and `workingDirectory.defaultDirectory`, which equals it)
@@ -99,11 +99,11 @@ function cpLength(text) {
  * Therefore: build a list of candidate anchors, and for each one resolve AND
  * read. The first anchor that yields readable text wins. Order:
  *
- *   1. `exec.agent` → `workingDirectory.ensure(agent)` — the session's own
+ *   1. `exec.agent` -> `workingDirectory.ensure(agent)`: the session's own
  *      directory. `exec.agent` really exists on the tool runtime context
  *      (`ToolExecutionInput.agent`), so this is the most precise source.
- *   2. `exec.cwd` — when the runtime supplies one.
- *   3. `process.cwd()` — last resort only.
+ *   2. `exec.cwd`: when the runtime supplies one.
+ *   3. `process.cwd()`: last resort only.
  */
 async function anchorCandidates(ctx, exec) {
   const anchors = []
@@ -282,7 +282,7 @@ function runReadRange(args, fileText) {
     // (the exported entry point was cut off), so the cap is the structural maximum.
     const outlineCap = clamp(args.maxLines, 1, MAX_WINDOW, MAX_WINDOW)
     const patterns = [
-      // declarations — `export`/`default` prefixes must not hide the declaration itself
+      // declarations: `export`/`default` prefixes must not hide the declaration itself
       /^\s*(export\s+)?(default\s+)?(async\s+)?function\s*\*?\s*\w*\s*[({]/,
       /^\s*(export\s+)?(default\s+)?(abstract\s+)?class\s+\w+/,
       /^\s*(export\s+)?(default\s+)?(const|let|var)\s+\w+\s*=/,
@@ -341,7 +341,9 @@ const catalogOutputSchema = {
 
 function firstSentence(text) {
   const trimmed = String(text || '').trim()
-  const cut = trimmed.split(/(?<=[.!?。！？])\s/)[0] || trimmed
+  // Sentence ends in both Latin and CJK punctuation (。！？), so a Chinese tool
+  // description is cut at its first sentence too.
+  const cut = trimmed.split(/(?<=[.!?。！？])\s*/)[0] || trimmed
   return cut.length > 140 ? `${cut.slice(0, 137)}...` : cut
 }
 
@@ -355,7 +357,7 @@ function stripCtx(text) {
 }
 
 /* ------------------------------------------------------------------ *
- * Prompt guidance (the "Raw 收敛" half)
+ * Prompt guidance (the "Raw 鏀舵暃" half)
  * ------------------------------------------------------------------ */
 
 /**
@@ -421,7 +423,7 @@ export function apply(ctx, config = {}) {
     const systemPrompt = ctx.get('systemPrompt')
     if (systemPrompt) {
       // The guidance body tells the model to prefer `read_range`; `tool_catalog`
-      // is only mentioned in passing. So the gate must be `read_range` alone —
+      // is only mentioned in passing. So the gate must be `read_range` alone:
       // an "any of these is visible" gate kept the section rendering after the
       // tool it describes was gone, which is exactly the failure mode the
       // visibility convention exists to prevent.

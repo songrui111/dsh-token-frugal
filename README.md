@@ -1,4 +1,4 @@
-# dsh-token-diet
+# dsh-token-frugal
 
 Stop paying for files and pages you didn't need to read.
 
@@ -10,7 +10,7 @@ A small Host plugin for DeepSeek Harness that adds three deferred-loaded tools:
 | `tool_catalog` | Lists the tools this session can actually call, one line each. Because once tools are deferred, the model must be able to rediscover them. |
 | `fetch_recall` | Reads any slice of a tool result that was slimmed, by absolute character offset. |
 
-It also **slims oversized `web_fetch` results**: a docs page can be ~177,000 characters (≈46k tokens) and every token of it is re-sent on each later turn. Above a threshold the plugin keeps a bounded head plus a digest of the page's headings, and offers `fetch_recall` for the rest.
+It also **slims oversized `web_fetch` results**: a docs page can be ~177,000 characters (鈮?6k tokens) and every token of it is re-sent on each later turn. Above a threshold the plugin keeps a bounded head plus a digest of the page's headings, and offers `fetch_recall` for the rest.
 
 ## Why
 
@@ -36,14 +36,14 @@ Oversized fetch results, same idea:
 | docs page-shaped fixture | 4,742 tok | 495 tok | **89.6%** |
 | Live `docs.python.org/3/library/asyncio-task.html` | 46,582 tok | ~579 tok | **98.8%** |
 
-Token figures are a deterministic approximation of the Harness token rule (CJK ≈ 1.7 chars/token, code ≈ 3.8 chars/token). They are for comparison, not billing.
+Token figures are a deterministic approximation of the Harness token rule (CJK 鈮?1.7 chars/token, code 鈮?3.8 chars/token). They are for comparison, not billing.
 
 **Savings scale with file size.** Small scripts save less because the per-call header and window context floor dominates.
 
 ## Install
 
 ```bash
-dsh plugin install /path/to/dsh-token-diet
+dsh plugin install dsh-token-frugal
 ```
 
 Or install the folder as a bundle. The row id is `token-diet`; override `config` in your own `cordis.patch.yml` to change behaviour across upgrades.

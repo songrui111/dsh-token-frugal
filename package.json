@@ -1,7 +1,6 @@
 {
-  "name": "dsh-token-diet",
+  "name": "dsh-token-frugal",
   "version": "0.4.0",
-  "private": true,
   "description": "Frugal tool layer for DeepSeek Harness: precise file reading, a self-serve tool catalog, and slimmed oversized tool results, so long sessions stop re-billing whole files and whole pages.",
   "type": "module",
   "license": "MIT",
@@ -12,10 +11,21 @@
     "./locale/*.json": "./locale/*.json",
     "./icon": "./icon.svg"
   },
-  "files": ["index.js", "ingest.js", "archive.js", "cordis.patch.yml", "locale/*.json", "icon.svg"],
+  "files": ["index.js", "ingest.js", "archive.js", "cordis.patch.yml", "locale/*.json", "icon.svg", "README.md", "README.zh.md"],
   "icon": "./icon.svg",
   "keywords": ["deepseek-harness", "dsh", "dsh-plugin", "token", "context", "tool-catalog", "web-fetch"],
   "engines": { "dsh": ">=0.2.0" },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/songrui111/dsh-token-diet.git"
+  },
+  "homepage": "https://github.com/songrui111/dsh-token-diet#readme",
+  "bugs": {
+    "url": "https://github.com/songrui111/dsh-token-diet/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "dsh": {
     "bundle": { "patch": "./cordis.patch.yml" }
   }
