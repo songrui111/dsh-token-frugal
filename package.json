@@ -23,6 +23,11 @@
   "bugs": {
     "url": "https://github.com/songrui111/dsh-token-frugal/issues"
   },
+  "scripts": {
+    "test": "node test/run-all.mjs",
+    "measure:reads": "node test/ab-measure.mjs",
+    "measure:page": "node test/c-live-measure.mjs"
+  },
   "publishConfig": {
     "access": "public"
   },
