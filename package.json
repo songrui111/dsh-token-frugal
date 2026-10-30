@@ -1,7 +1,7 @@
 {
-  "name": "dsh-token-prune",
-  "version": "0.5.0",
-  "description": "Prunes a session's input tokens at the source: read any file by line range or symbol mention instead of whole, and bound oversized tool results at the boundary while keeping a recovery path. Unlike compression, it stops unneeded content from entering the context at all.",
+  "name": "dsh-readprune",
+  "version": "0.6.0",
+  "description": "Saves tokens in DeepSeek Harness sessions: read any file by line range or symbol mention instead of whole, and bound oversized tool results while keeping a recovery path. Pruning happens at the source, not after content reaches the context.",
   "type": "module",
   "license": "MIT",
   "exports": {
@@ -17,11 +17,11 @@
   "engines": { "dsh": ">=0.2.0" },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/songrui111/dsh-token-prune.git"
+    "url": "git+https://github.com/songrui111/dsh-readprune.git"
   },
-  "homepage": "https://github.com/songrui111/dsh-token-prune#readme",
+  "homepage": "https://github.com/songrui111/dsh-readprune#readme",
   "bugs": {
-    "url": "https://github.com/songrui111/dsh-token-prune/issues"
+    "url": "https://github.com/songrui111/dsh-readprune/issues"
   },
   "scripts": {
     "test": "node test/run-all.mjs",

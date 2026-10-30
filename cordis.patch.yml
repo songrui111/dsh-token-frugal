@@ -1,4 +1,4 @@
-# dsh-token-prune — one installable row.
+# dsh-readprune — one installable row.
 #
 # The row is referenced by PACKAGE NAME, matching every other bundle in this
 # profile. A relative `./index.js` here resolved inconsistently once the bundle
@@ -11,5 +11,5 @@
 # cordis.patch.yml keeps overriding `config` without editing the id.
 - insert:
     - id: token-diet
-      name: dsh-token-prune
+      name: dsh-readprune
       config: {}

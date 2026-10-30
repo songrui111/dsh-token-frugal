@@ -1,8 +1,9 @@
-# dsh-token-prune（Token 修剪）
+# dsh-readprune（Token 修剪）
 
-不再为模型根本不需要看的内容付费。
+为 DeepSeek Harness 会话节省 token：让内容一开始就不进入上下文。
 
-为 DeepSeek Harness 提供的 Host 插件：**在源头修剪输入**，而不是事后压缩。
+Host 插件，**在源头修剪输入**而不是事后压缩：按行号或符号定位读取文件而非整份读，
+并对过大的工具结果在边界处设上限，同时保留取回路径。
 
 ## 与压缩类插件的区别
 
@@ -78,7 +79,7 @@ token 数为对 Harness 计费规则的确定性近似（中文约 1.7 字/token
 ## 安装
 
 ```bash
-dsh plugin install dsh-token-prune
+dsh plugin install dsh-readprune
 ```
 
 行 id 保持 `token-diet` 不随改名变化，因此你在自己 `cordis.patch.yml` 里的

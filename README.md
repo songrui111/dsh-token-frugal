@@ -1,9 +1,11 @@
-# dsh-token-prune
+# dsh-readprune
 
-Stop paying for content the model never needed to see.
+Save tokens in a DeepSeek Harness session by keeping content out of the context
+in the first place.
 
-A Host plugin for DeepSeek Harness that **prunes input at the source** rather
-than compressing it afterwards.
+A Host plugin that **prunes input at the source** rather than compressing it
+afterwards: read any file by line range or symbol mention instead of whole, and
+bound oversized tool results at the boundary while keeping a recovery path.
 
 ## What makes this different
 
@@ -84,7 +86,7 @@ strategies; they do not predict a bill.
 ## Install
 
 ```bash
-dsh plugin install dsh-token-prune
+dsh plugin install dsh-readprune
 ```
 
 The row id stays `token-diet` across renames, so a `config` override in your own

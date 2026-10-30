@@ -1,5 +1,5 @@
 /**
- * dsh-token-prune — prune a session's input at the source.
+ * dsh-readprune — save tokens by pruning a session's input at the source.
  *
  * Three tools, all deferred-loaded so their schemas cost almost nothing per turn:
  *

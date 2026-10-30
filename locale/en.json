@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Token Prune",
-    "description": "Prunes input at the source: read any file by line range or symbol mention instead of whole, and bound oversized tool results while keeping a recovery path."
+    "title": "ReadPrune",
+    "description": "Saves tokens by reading files by line range or symbol instead of whole, and bounding oversized tool results with a recovery path."
   }
 }
