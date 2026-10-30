@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Token Diet",
-    "description": "Precise file reading (read only the lines you need) plus a self-serve tool catalog, so long sessions stop re-billing whole files and forgetting installed tools."
+    "title": "Token Prune",
+    "description": "Prunes input at the source: read any file by line range or symbol mention instead of whole, and bound oversized tool results while keeping a recovery path."
   }
 }

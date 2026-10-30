@@ -1,7 +1,7 @@
 {
-  "name": "dsh-token-frugal",
-  "version": "0.4.1",
-  "description": "Frugal tool layer for DeepSeek Harness: precise file reading, a self-serve tool catalog, and slimmed oversized tool results, so long sessions stop re-billing whole files and whole pages.",
+  "name": "dsh-token-prune",
+  "version": "0.5.0",
+  "description": "Prunes a session's input tokens at the source: read any file by line range or symbol mention instead of whole, and bound oversized tool results at the boundary while keeping a recovery path. Unlike compression, it stops unneeded content from entering the context at all.",
   "type": "module",
   "license": "MIT",
   "exports": {
@@ -13,20 +13,21 @@
   },
   "files": ["index.js", "ingest.js", "archive.js", "cordis.patch.yml", "locale/*.json", "icon.svg", "README.md", "README.zh.md"],
   "icon": "./icon.svg",
-  "keywords": ["deepseek-harness", "dsh", "dsh-plugin", "token", "context", "tool-catalog", "web-fetch"],
+  "keywords": ["deepseek-harness", "dsh", "dsh-plugin", "token", "context", "precise-read", "tool-catalog"],
   "engines": { "dsh": ">=0.2.0" },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/songrui111/dsh-token-frugal.git"
+    "url": "git+https://github.com/songrui111/dsh-token-prune.git"
   },
-  "homepage": "https://github.com/songrui111/dsh-token-frugal#readme",
+  "homepage": "https://github.com/songrui111/dsh-token-prune#readme",
   "bugs": {
-    "url": "https://github.com/songrui111/dsh-token-frugal/issues"
+    "url": "https://github.com/songrui111/dsh-token-prune/issues"
   },
   "scripts": {
     "test": "node test/run-all.mjs",
     "measure:reads": "node test/ab-measure.mjs",
-    "measure:page": "node test/c-live-measure.mjs"
+    "measure:page": "node test/c-live-measure.mjs",
+    "measure:session": "node test/session-measure.mjs"
   },
   "publishConfig": {
     "access": "public"

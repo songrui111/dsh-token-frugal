@@ -1,12 +1,17 @@
 /**
- * dsh-token-frugal — frugal tool layer for DeepSeek Harness.
+ * dsh-token-prune — prune a session's input at the source.
  *
- * Two tools, both deferred-loaded so their schemas cost almost nothing per turn:
+ * Three tools, all deferred-loaded so their schemas cost almost nothing per turn:
  *
- *   read_range     precise reads (line windows, symbol mentions, capped output)
- *                  instead of dumping whole files into the context.
- *   tool_catalog   self-serve inventory: because once tools stop being inlined,
- *                  the model must be able to rediscover what exists.
+ *   read_range     precise reads (line windows, symbol mentions, structural
+ *                  outlines, capped output) instead of dumping whole files.
+ *   tool_catalog   self-serve inventory: once tools stop being inlined, the
+ *                  model must be able to rediscover what exists.
+ *   fetch_recall   read back any slice of a pruned result by character offset.
+ *
+ * The difference from a compressing plugin: this one tries to keep expensive
+ * content out of the context in the first place, rather than shrinking it after
+ * it has arrived.
  *
  * Design notes
  * ------------

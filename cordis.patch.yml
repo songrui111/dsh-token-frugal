@@ -1,4 +1,4 @@
-# dsh-token-frugal — one installable row.
+# dsh-token-prune — one installable row.
 #
 # The row is referenced by PACKAGE NAME, matching every other bundle in this
 # profile. A relative `./index.js` here resolved inconsistently once the bundle
@@ -7,9 +7,9 @@
 #
 # `package.json` exports the entry at "." , so the bare name loads index.js.
 #
-# The row id stays `token-diet`: it is stable across the rename, so a user's own
+# The row id stays `token-diet`: it is stable across renames, so a user's own
 # cordis.patch.yml keeps overriding `config` without editing the id.
 - insert:
     - id: token-diet
-      name: dsh-token-frugal
+      name: dsh-token-prune
       config: {}
